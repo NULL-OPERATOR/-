@@ -106,7 +106,7 @@ prompt_git() {
     if [[ -n $dirty ]]; then
       prompt_segment 199 black
     else
-      prompt_segment green black
+      prompt_segment 93 black
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
@@ -123,8 +123,8 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
+    zstyle ':vcs_info:*' stagedstr '✚_✚'
+    zstyle ':vcs_info:*' unstagedstr '●♡♡♡'
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
@@ -146,7 +146,7 @@ prompt_hg() {
         st='±'
       else
         # if working copy is clean
-        prompt_segment green black
+        prompt_segment 93 black
       fi
       echo -n $(hg prompt "☿ {rev}@{branch}") $st
     else
@@ -160,7 +160,7 @@ prompt_hg() {
         prompt_segment 199 black
         st='±'
       else
-        prompt_segment green black
+        prompt_segment 93 black
       fi
       echo -n "☿ $rev@$branch" $st
     fi
@@ -176,7 +176,7 @@ prompt_dir() {
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment 87 black "(`basename $virtualenv_path`)"
+    prompt_segment 87 88 "(`basename $virtualenv_path`)"
   fi
 }
 
@@ -187,11 +187,11 @@ prompt_virtualenv() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{87}%}★ⓃⓄⓅⒺ"
   [[ $UID -eq 0 ]] && symbols+="%{%F{199}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment 57 default "$symbols"
 }
 
 ## Main prompt
