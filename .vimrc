@@ -1,5 +1,15 @@
+" to setup
+" 1: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" 2: cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git
+" 3:$ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+" 4: inside vim :PluginInstall
+
+
 set nocompatible
 filetype off
+
+set relativenumber
+set number
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -10,11 +20,20 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'morhetz/gruvbox'
+Plugin 'hynek/vim-python-pep8-indent'
 
 execute pathogen#infect()
 
+
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+set background=dark
+"colorscheme base16-eighties
+"colorscheme base16-default
+colorscheme  kolor
+"colorscheme gruvbox
 
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -23,6 +42,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 
 " Leader
 let mapleader = ","
@@ -35,8 +55,7 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
   endif
 
-set background=dark
-colorscheme base16-eighties
+
 
 imap jk <Esc>
 imap kj <Esc>
@@ -200,3 +219,5 @@ endif
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 "RSpec.vim mappings
+"
+set clipboard=unnamed
