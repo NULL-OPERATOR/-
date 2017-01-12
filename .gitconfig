@@ -1,0 +1,21 @@
+[core]
+	autocrlf = input
+	safecrlf = true
+	co = checkout
+  mergeoptions = --no-edit
+
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[user]
+	name = NULL-OPERATOR
+	email = x@cryptolab.net
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
