@@ -53,3 +53,11 @@ redis-server
 
 clear queue
 celery -A ws purge -f
+
+
+alias ws3='cd ~/Development/git/ws/ && source ../../envs/ws/bin/activate'
+alias ws4='cd ~/Development/git/natooraws-app && source ../../envs/ws/bin/activate'
+alias wss='z ws && echo "OOOHH SERRRRVER" && source ../../envs/ws/bin/activate && ./manage.py runserver 0.0.0.0:8000'
+alias worker='z ws && echo "WORKER" && source ../../envs/ws/bin/activate && celery -A ws worker -l info'
+alias shell='./manage.py shell'
+alias server='./manage.py runserver 0.0.0.0:8000'
