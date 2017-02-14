@@ -6,6 +6,8 @@ find . -name ".DS_Store" -delete
 defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write -g InitialKeyRepeat -int 10
 
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
 
 ## hide volume logo
 
