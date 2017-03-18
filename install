@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# http://brew.sh/
+
+xcode-select --install
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew install vim --with-override-system-vi
+brew install\
+  cask\
+  ccat\
+  diff-so-fancy\
+  git\
+  httpie\
+  jq\
+  node\
+  nvm\
+  postgresql\
+  progress\
+  redis\
+  tree\
+  yarn\
+  z
+  # https://github.com/TermiT/Flycut
+  # http://www.goofyapp.com/
+
+brew cask install\
+  caffeine\
+  atom\
+  electron\
+  flycut\
+  google-chrome\
+  iterm2\
+  sequel-pro\
+  slack\
+  spotify\
+  thyme\
+  vlc
+
+# if [ ! -d ~/dotfiles ]; then
+#   (cd ~ && git clone https://);
+# fi
+
+[ -d ~/projects ] || mkdir ~/projects
+
+zsh_path=`which zsh`
+
+if [ $SHELL != $zsh_path ]; then
+  chsh -s $zsh_path
+fi
