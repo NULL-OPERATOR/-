@@ -4,10 +4,24 @@
 
 xcode-select --install
 
+[ -d ~/projects ] || mkdir ~/projects
+
+zsh_path=`which zsh`
+
+if [ $SHELL != $zsh_path ]; then
+  chsh -s $zsh_path
+fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 brew install vim --with-override-system-vi
 brew install\
+  autoenv\
+  python3\
   cask\
   ccat\
   diff-so-fancy\
@@ -38,14 +52,12 @@ brew cask install\
   thyme\
   vlc
 
+brew cask install --appdir="/Applications"
+  firefox\
+  atom\
+
+pip install virtualenv
+
 # if [ ! -d ~/dotfiles ]; then
 #   (cd ~ && git clone https://);
 # fi
-
-[ -d ~/projects ] || mkdir ~/projects
-
-zsh_path=`which zsh`
-
-if [ $SHELL != $zsh_path ]; then
-  chsh -s $zsh_path
-fi
