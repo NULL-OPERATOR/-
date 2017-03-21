@@ -2,6 +2,10 @@
 
 # http://brew.sh/
 
+defaults write com.apple.finder AppleShowAllFiles YES
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 10
+
 xcode-select --install
 
 [ -d ~/projects ] || mkdir ~/projects
@@ -55,6 +59,7 @@ brew cask install\
 brew cask install --appdir="/Applications"
   firefox\
   atom\
+  flux\
 
 pip install virtualenv
 
