@@ -42,7 +42,9 @@ brew install\
   redis\
   tree\
   yarn\
-  z
+  z\
+  coreutils
+  
   # https://github.com/TermiT/Flycut
   # http://www.goofyapp.com/
 
@@ -57,7 +59,8 @@ brew cask install\
   slack\
   spotify\
   thyme\
-  vlc
+  vlc\
+  viscocity
 
 brew cask install --appdir="/Applications"
   firefox\
