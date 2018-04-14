@@ -4,7 +4,7 @@
 
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 12
 
 # disable the swiping to go back in chrome
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
@@ -27,22 +27,24 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 brew install vim --with-override-system-vi
 brew install\
-  autoenv\
-  python3\
+#  autoenv\
+#  python@2\
+#  python3\
   cask\
-  ccat\
-  diff-so-fancy\
+#  ccat\
+#  diff-so-fancy\
   git\
-  httpie\
-  jq\
+#  httpie\
+#  jq\
   node\
-  nvm\
-  postgresql\
-  progress\
+#  nvm\
+#  postgresql\
+#  progress\
+  mysql\
   redis\
-  tree\
-  yarn\
-  z\
+#  tree\
+#  yarn\
+#  z\
   coreutils
   
   # https://github.com/TermiT/Flycut
@@ -51,21 +53,20 @@ brew install\
 brew cask install\
   caffeine\
   atom\
-  electron\
-  flycut\
   google-chrome\
   iterm2\
-  sequel-pro\
+#  sequel-pro\
   slack\
-  spotify\
-  thyme\
-  vlc\
+#  spotify\
+#  thyme\
+
   viscocity
 
 brew cask install --appdir="/Applications"
   firefox\
   atom\
   flux\
+  vlc\
 
 pip install virtualenv
 
