@@ -26,48 +26,25 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 brew install vim --with-override-system-vi
+brew install coreutils
 brew install\
-#  autoenv\
-#  python@2\
-#  python3\
   cask\
-#  ccat\
-#  diff-so-fancy\
   git\
-#  httpie\
-#  jq\
   node\
-#  nvm\
-#  postgresql\
-#  progress\
   mysql\
   redis\
-#  tree\
-#  yarn\
-#  z\
-  coreutils
-  
-  # https://github.com/TermiT/Flycut
-  # http://www.goofyapp.com/
-
-brew cask install\
-  caffeine\
-  atom\
-  google-chrome\
-  iterm2\
-#  sequel-pro\
-  slack\
-#  spotify\
-#  thyme\
-
-  viscocity
 
 brew cask install --appdir="/Applications"
   firefox\
   atom\
   flux\
   vlc\
-
+  caffeine\
+  google-chrome\
+  iterm2\
+  slack\
+  viscocity
+  
 pip install virtualenv
 
 # if [ ! -d ~/dotfiles ]; then
